@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'my_user'
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,8 @@ ROOT_URLCONF = 'imnight.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(os.path.join(BASE_DIR, 'imnight'),'templates'),
+                ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

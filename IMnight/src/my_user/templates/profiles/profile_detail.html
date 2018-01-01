@@ -1,0 +1,8 @@
+{% extends "base.html" %} {% block content %}
+<h1>{{object.user.username}} <small>{{object.grade}}</small></h1>
+<p>you have {{ object.point }} points</p>
+<p>add in at :{{object.sign_in_date}}</p>
+
+
+
+{% endblock content %}
