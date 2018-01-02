@@ -25,7 +25,7 @@ class Profile(models.Model):
                              default=FRESHMAN, 
                              null=False, 
                              blank=True)
-    point = models.IntegerField(default=0)
+    point = models.IntegerField(default=100)
     sign_in_date = models.DateTimeField(auto_now_add=True)
     updated      = models.DateTimeField(auto_now=True)
     # performer    = models.BooleanField(default=False)

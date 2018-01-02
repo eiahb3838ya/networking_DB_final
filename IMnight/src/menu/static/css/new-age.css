@@ -330,3 +330,7 @@ footer {
   padding-right: 150px;
   text-align: center;
 }
+#chat{
+  max-height: 300px;
+  overflow: scroll;
+}

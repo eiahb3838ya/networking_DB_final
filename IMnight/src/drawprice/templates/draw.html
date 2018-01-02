@@ -19,6 +19,9 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
 
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="{% static 'device-mockups/device-mockups.min.css' %}">
@@ -30,25 +33,9 @@
 
 </head>
 <body >
-	<!-- <form id = "loginform">
-	  <div class="form-group">
-	    <label for="exampleInputEmail1">Email address</label>
-	    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-	    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-	  </div>
-	  <div class="form-group">
-	    <label for="exampleInputPassword1">Password</label>
-	    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-	  </div>
-	  <div class="form-check">
-	    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-	    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-	  </div>
-	  <button type="submit" class="btn btn-primary">Submit</button>
-	</form> -->
-	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">2018 IMNight</a>
+        <a class="navbar-brand js-scroll-trigger" href="/menu/">2018 IMNight</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -56,13 +43,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#download">Download</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#features">Features</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+             <li class="nav-item">
+              <h5><a href="/menu/logout">登出</a><h5>
             </li>
           </ul>
         </div>
@@ -70,19 +57,41 @@
     </nav>
 	<div class = "signup">
 	    <div class = "row">
-	    	<div class = "col-md-6">
+	    	<div class = "col-md-4">
 		        <h1>抽獎</h1>
-		        <button type="button" style = "background-color: transparent; border: 0;"><img src="http://www.faithdominionchurch.com/uploads/4/8/7/3/48737287/gift-flat_orig.png"></button>
+		        <button type="button" style = "background-color: transparent; border: 0;"><img src="https://1.bp.blogspot.com/-M9b9pNs2dyA/WOSS0_ONjGI/AAAAAAAAWWw/If3PgCNjNvcWR56KW8oeph4YnYYfuAV4ACPcB/s1600/IMG_1009.JPG"></button>
 	    	</div>
-	    	<div class = "col-md-6" id = "bidnum">
-	    		<form action="" method="post">
-	            {% csrf_token %}
+	    	<div class = "col-md-4">
 	            <label for="bidprice"><h1>我要下注:</h1></label><br/><br/>
-	            <input type="number" name="bid" value="" id="bid"> <br /></br>
-	            <input type="submit" value="賭了"/>
-	        	</form>
+	            <p>{{ request.user.username }} 你有 {{ request.user.profile.point }} 點</p>
+	            <form>
+	            	<input id="bid" type="text" align="center" placeholder="0">
+<!-- 	            	<input class="btn btn-outline btn-xl js-scroll-trigger" type="submit" onclick="myFunction()" style="position: absolute; left: 450px"/> -->
+	            </form>
+	             <br /></br>
+	            <button class="btn btn-outline btn-xl js-scroll-trigger" id = "allin" title="賭了" onclick="myFunction()">賭了</button>
+<!-- 	        	</form> -->
+	    	</div>
+	    	<div class = "col-md-4">
+	    		<script src="{% static 'js/chatroom.js' %}"></script>
+	    			<h1>實況</h1>
+	    		<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> -->
+<!-- 	    		<div class="col-sm-3 col-sm-offset-4 frame"> -->
+            			<ul id = "chat" style="height: 300px; overflow: scroll;">
+            				<li id = "chat">Start drawing</li>
+            			</ul>
+<!-- 			            <div>
+			                <div class="msj-rta macro" style="margin:auto">                        
+			                    <div class="text text-r" style="background:whitesmoke !important">
+			                        <input class="mytext" placeholder="Type a message" onkeypress="return runScript(event)" />
+			                    </div> 
+			                </div>
+			            </div> -->
+
+        			<!-- </div> -->
 	    	</div>
 	    </div>
+	    
     </div>
 
 </body>
