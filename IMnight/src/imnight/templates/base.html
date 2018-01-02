@@ -1,12 +1,14 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>{% block title %}IMnight{% endblock title %} </title>
-    <!-- {% include 'snippets/css.html' %} -->
+<!--     <link href="{% static 'css/new-age.css' %}" rel="stylesheet"> -->
+    {% include 'snippets/css.html' %}
 </head>
 
-<body>
+<body id = "page-top">
     <div class="container">
         {% include 'snippets/nav.html' %} {%block content%} {%endblock content%}
     </div>

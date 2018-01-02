@@ -15,8 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
+# from views import index
+# from django.contrib.auth.views import login, logout
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^profiles/', include('my_user.urls', namespace='profiles'))
+    url(r'^profiles/', include('my_user.urls', namespace='profiles')),
+    url(r'^menu/',include('menu.urls', namespace='menu')),
+    url(r'^drawprice/',include('drawprice.urls', namespace='drawprice')),
+    # url(r'^accounts/login/$',login),
+    # url(r'^accounts/logout/$',logout),
+    # url(r'^index/$',index),
 ]
