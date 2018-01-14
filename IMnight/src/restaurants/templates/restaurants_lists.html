@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block content %}
+
+<ul>
+    {% for obj in object_list %}
+    <li>
+
+        <h2>{{obj.name}}</h2>
+        <p>坐落在 {{obj.location}} 的優質小店，<br/> 如果你想吃 {{obj.category}}，{{obj.name}}會是你很好的選擇</p>
+
+    </li>
+    {% endfor %}
+</ul>
+
+
+
+
+{% endblock content %}

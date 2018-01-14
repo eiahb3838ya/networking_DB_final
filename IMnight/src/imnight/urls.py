@@ -22,8 +22,8 @@ urlpatterns = [
     url(r'^', include('menu.urls', namespace='menu')),
     url(r'^admin/', admin.site.urls),
     url(r'^profiles/', include('my_user.urls', namespace='profiles')),
-    
     url(r'^drawprice/',include('drawprice.urls', namespace='drawprice')),
+    url(r'^restaurants/', include('restaurants.urls', namespace='drawprice')),
     # url(r'^accounts/login/$',login),
     # url(r'^accounts/logout/$',logout),
     # url(r'^index/$',index),
