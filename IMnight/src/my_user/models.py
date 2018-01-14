@@ -7,6 +7,8 @@ from django.dispatch import receiver
 # Create your models here.
 class Profile(models.Model):
     user         = models.OneToOneField(User, on_delete=models.CASCADE)
+    # coupon = models.ManyToManyField(
+    #     'Restaurant', through='Coupon', related_name='people')
     # facebook = models.
     FRESHMAN = 'FR'
     SOPHOMORE = 'SO'
@@ -29,11 +31,11 @@ class Profile(models.Model):
     sign_in_date = models.DateTimeField(auto_now_add=True)
     updated      = models.DateTimeField(auto_now=True)
     # performer    = models.BooleanField(default=False)
-    
 
-
-def __str__(self):
+    def __str__(self):
         return self.user.username
+
+
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):

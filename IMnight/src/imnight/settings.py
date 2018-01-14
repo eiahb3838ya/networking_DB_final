@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'my_user',
     'menu',
     'drawprice',
-    'restaurants'
+    'restaurants',
+    'draw_restaurant'
 ]
 
 MIDDLEWARE = [

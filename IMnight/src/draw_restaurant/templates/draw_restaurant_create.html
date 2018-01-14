@@ -1,0 +1,6 @@
+{% extends "base.html" %} {% block content %}
+<form method="post">
+    {% csrf_token %} {{ coupon.as_p }}
+    <button type="submit">Draw</button>
+</form>
+{% endblock content %}
