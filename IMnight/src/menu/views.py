@@ -10,4 +10,4 @@ class HomeView(TemplateView):
 class UserCreateView(CreateView):
 	form_class=UserCreationForm
 	template_name='signup.html'
-	success_url='/menu'
+	success_url='/login'

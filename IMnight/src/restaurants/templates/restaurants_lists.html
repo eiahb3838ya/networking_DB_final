@@ -6,7 +6,7 @@
 
         <h2>{{obj.name}}</h2>
         <p>坐落在 {{obj.location}} 的優質小店，<br/> 如果你想吃 {{obj.category}}，{{obj.name}}會是你很好的選擇</p>
-
+        {{obj.beenrestaurant_set.get}} {{BeenRestaurant}}
     </li>
     {% endfor %}
 </ul>
