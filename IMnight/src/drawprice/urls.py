@@ -7,6 +7,6 @@ from .views import (
 )
 urlpatterns = [
 
-    url(r'^draw$', DrawingView.as_view(),name='draw'),
+    url(r'^$', DrawingView.as_view(),name='draw'),
     url(r'^prize$', PrizeView.as_view(),name='prize'),
 ]

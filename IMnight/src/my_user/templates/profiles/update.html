@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% block content %}
+<h1>{{form.instance.username}} <small>{{form.instance.grade}}</small></h1>
+<p>{{form.instance.point}}</p>
+<hr/>
+<form action="" method="post">
+    {%csrf_token%} {{ form.as_p }}
+    <input type="submit" value="確認">
+</form>
+{% endblock content %}

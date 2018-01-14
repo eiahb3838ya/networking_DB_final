@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,71 +29,70 @@
     <link href="{% static 'css/new-age.css' %}" rel="stylesheet">
 
 
-  </head>
+</head>
 
-  <body id="page-top">
+<body id="page-top">
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">2018 IMNight</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">2018 IMNight</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#features">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
-            <li class="nav-item">
-              <h5><a href="/menu/logout">登出</a><h5>
-            </li>
-          </ul>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <h5><a href="/logout">登出</a>
+                            <h5>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
     <header class="masthead">
-      <div class="container h-100">
-        <div class="row h-100">
-          <div class="col-lg-7 my-auto">
-            <div class="header-content mx-auto">
-            	{% if request.user.is_authenticated %}
-	            	<h1>{{request.user.username}} <small>{{request.grade}}</small></h1>
-					<p>you have {{ request.user.profile.point }} points</p>
-					<p>add in at :{{request.user.profile.sign_in_date}}</p>
-					<a href="/drawprice/draw" class="btn btn-outline btn-xl js-scroll-trigger">現在開始，牽起你我的緣分</a>
-				{% else %}
-              		<h1 class="mb-5">2018資管之夜，我們要來做點資管系會做的事，讓之夜回歸他的緣起</h1>
-              		<a href="/menu/login" class="btn btn-outline btn-xl js-scroll-trigger">登入</a>
-              		<a href="/menu/create" class="btn btn-outline btn-xl js-scroll-trigger">註冊</a>
-              	{% endif %}
-            </div>
-          </div>
-          <div class="col-lg-5 my-auto">
-            <div class="device-container">
-              <div class="device-mockup iphone6_plus portrait white">
-                <div class="device">
-                  <div class="screen">
-                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                    <img src="{% static 'img/home.png' %}" class="img-fluid" alt="">
-                  </div>
-                  <div class="button">
-                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                  </div>
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-lg-7 my-auto">
+                    <div class="header-content mx-auto">
+                        {% if request.user.is_authenticated %}
+                        <h1>{{request.user.username}} <small>{{request.grade}}</small></h1>
+                        <p>you have {{ request.user.profile.point }} points</p>
+                        <p>add in at :{{request.user.profile.sign_in_date}}</p>
+                        <a href="/drawprice/draw" class="btn btn-outline btn-xl js-scroll-trigger">現在開始，牽起你我的緣分</a> {% else %}
+                        <h1 class="mb-5">2018資管之夜，我們要來做點資管系會做的事，讓之夜回歸他的緣起</h1>
+                        <a href="/login" class="btn btn-outline btn-xl js-scroll-trigger">登入</a>
+                        <a href="/create" class="btn btn-outline btn-xl js-scroll-trigger">註冊</a> {% endif %}
+                    </div>
                 </div>
-              </div>
+                <div class="col-lg-5 my-auto">
+                    <div class="device-container">
+                        <div class="device-mockup iphone6_plus portrait white">
+                            <div class="device">
+                                <div class="screen">
+                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                                    <img src="{% static 'img/home.png' %}" class="img-fluid" alt="">
+                                </div>
+                                <div class="button">
+                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </header>
 
-   <!--  <section class="download bg-primary text-center" id="download">
+    <!--  <section class="download bg-primary text-center" id="download">
       <div class="container" background-color: "white">
           <div class = "col-md-4">
             <a href="draw_people.html">
@@ -108,66 +107,66 @@
     </section> -->
 
     <section class="features" id="features">
-      <div class="container">
-        <!-- <div class="section-heading text-center">
+        <div class="container">
+            <!-- <div class="section-heading text-center">
           <h2>Unlimited Features, Unlimited Fun</h2>
           <p class="text-muted">Check out what you can do with this app theme!</p>
           <hr>
         </div> -->
-        <div class="row">
-          <div class="col-lg-4 my-auto">
-            <div class="device-container">
-              <div class="device-mockup iphone6_plus portrait white">
-                <div class="device">
-                  <div class="screen">
-                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                    <img src="{% static 'img/home2.png' %}" class="img-fluid" alt="">
-                  </div>
-                  <div class="button">
-                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                  </div>
+            <div class="row">
+                <div class="col-lg-4 my-auto">
+                    <div class="device-container">
+                        <div class="device-mockup iphone6_plus portrait white">
+                            <div class="device">
+                                <div class="screen">
+                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                                    <img src="{% static 'img/home2.png' %}" class="img-fluid" alt="">
+                                </div>
+                                <div class="button">
+                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <div class="col-lg-8 my-auto">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="feature-item">
+                                    <img src="{% static 'img/people.png' %}">
+                                    <h4>增加和系上人的認識</h4>
+                                    <p class="text-muted">資管系組成最重要的除了本身領域的知識之外，更重要的是人。而由資管系起家的Dcard最大的賣點就是，牽起了人與人之間的緣分，因此我們這次之夜也希望透過牽起之夜表演者甚至是所有人，與彼此之間的緣分，讓觀眾更認識我們。</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="feature-item">
+                                    <img src="{% static 'img/sky.png' %}">
+                                    <h4>增加對於資管系的知識</h4>
+                                    <p class="text-muted">系上同學能藉由提供本系小常識或是一些程式語言學習資源等方式，增加自己對本系的了解並互相交流。隨著資訊科技日漸成為主流，外系有興趣的同學也能透過我們的宣傳，得到對他們而言有趣且有用的知識，同時增加對資管系的認識。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="feature-item">
+                                    <img src="{% static 'img/ground.png' %}">
+                                    <h4>增加和周遭商家的緣分</h4>
+                                    <p class="text-muted">每天中午最大的煩惱就是...今天午餐吃什麼?我們將透過與附近商家合作，推出優惠券的方式，牽起同學們與台大在地的緣分</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="feature-item">
+                                    <i class="icon-lock-open text-primary"></i>
+                                    <h3>等你來發現</h3>
+                                    <p class="text-muted">以“緣”為整體主題概念，讓大家重視之夜緣起，並牽起所有觀眾（使用者）與資管相關知識和人，還有環境的緣分。希望拓展客群，跳出資管系及其朋友圈，接觸更多使用者。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-lg-8 my-auto">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="feature-item">
-                    <img src = "{% static 'img/people.png' %}">
-                    <h4>增加和系上人的認識</h4>
-                    <p class="text-muted">資管系組成最重要的除了本身領域的知識之外，更重要的是人。而由資管系起家的Dcard最大的賣點就是，牽起了人與人之間的緣分，因此我們這次之夜也希望透過牽起之夜表演者甚至是所有人，與彼此之間的緣分，讓觀眾更認識我們。</p>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="feature-item">
-                    <img src = "{% static 'img/sky.png' %}">
-                    <h4>增加對於資管系的知識</h4>
-                    <p class="text-muted">系上同學能藉由提供本系小常識或是一些程式語言學習資源等方式，增加自己對本系的了解並互相交流。隨著資訊科技日漸成為主流，外系有興趣的同學也能透過我們的宣傳，得到對他們而言有趣且有用的知識，同時增加對資管系的認識。</p>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="feature-item">
-                    <img src = "{% static 'img/ground.png' %}">
-                    <h4>增加和周遭商家的緣分</h4>
-                    <p class="text-muted">每天中午最大的煩惱就是...今天午餐吃什麼?我們將透過與附近商家合作，推出優惠券的方式，牽起同學們與台大在地的緣分</p>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="feature-item">
-                    <i class="icon-lock-open text-primary"></i>
-                    <h3>等你來發現</h3>
-                    <p class="text-muted">以“緣”為整體主題概念，讓大家重視之夜緣起，並牽起所有觀眾（使用者）與資管相關知識和人，還有環境的緣分。希望拓展客群，跳出資管系及其朋友圈，接觸更多使用者。</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- <section class="cta">
@@ -181,28 +180,28 @@
     </section> -->
 
     <section class="contact bg-primary" id="contact">
-      <div class="container">
-        <h2>2018 資管之夜...敬請期待！</h2>
-        <h5 style="color: white">總召：陳欣宜	</br>
-        副召：胡逸凡、徐遠志、鄭揚、林雨新	</h5>
-      </div>
+        <div class="container">
+            <h2>2018 資管之夜...敬請期待！</h2>
+            <h5 style="color: white">總召：陳欣宜 </br>
+                副召：胡逸凡、徐遠志、鄭揚、林雨新 </h5>
+        </div>
     </section>
 
     <footer>
-      <div class="container">
-        <p>Contact us: imnight@ntu.im</p>
-        <ul class="list-inline">
-          <li class="list-inline-item">
-            <a href="#">Privacy</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#">Terms</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#">FAQ</a>
-          </li>
-        </ul>
-      </div>
+        <div class="container">
+            <p>Contact us: imnight@ntu.im</p>
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="#">Privacy</a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#">Terms</a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#">FAQ</a>
+                </li>
+            </ul>
+        </div>
     </footer>
 
     <!-- Bootstrap core JavaScript -->
@@ -215,6 +214,6 @@
     <!-- Custom scripts for this template -->
     <script src="{% static 'js/new-age.min.js' %}"></script>
 
-  </body>
+</body>
 
 </html>
